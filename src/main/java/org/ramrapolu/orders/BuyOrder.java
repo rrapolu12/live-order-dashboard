@@ -6,4 +6,9 @@ public class BuyOrder extends Order {
         super(userId, quantity, price);
     }
 
+    @Override
+    public OrderType orderType() {
+        return OrderType.BUY;
+    }
+
 }

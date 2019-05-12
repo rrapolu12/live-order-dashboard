@@ -23,4 +23,6 @@ public abstract class Order {
     public double getPrice() {
         return price;
     }
+
+    public abstract OrderType orderType();
 }
