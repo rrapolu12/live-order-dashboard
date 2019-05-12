@@ -15,4 +15,8 @@ public class LiveOrderDashBoard {
     public boolean hasRegistered(Order order){
         return orders.contains(order);
     }
+
+    public void cancel(Order order) {
+        orders.remove(order);
+    }
 }

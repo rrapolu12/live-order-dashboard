@@ -17,10 +17,11 @@ public class LiveOrderDashBoardTest {
     private LiveOrderDashBoard board;
 
     private String USERNAME = "testuser";
+    private String USERNAME_1 = "testuser";
     private double quantity = 3.5;
     private double price = 303.0;
 
-    private Order order = new Order(USERNAME,quantity,price);
+
 
     @Before
     public void before(){
@@ -29,9 +30,27 @@ public class LiveOrderDashBoardTest {
 
     @Test
     public void test_register_order_on_dashboard(){
+        Order order = new Order(USERNAME,quantity,price);
         board.register(order);
         boolean registered = board.hasRegistered(order);
         Assert.assertTrue(registered);
+    }
+
+    @Test
+    public void test_cancel_order(){
+        Order order = new Order(USERNAME,quantity,price);
+        Order order_to_ve_canceled = new Order(USERNAME_1,quantity,price);
+        board.register(order);
+        board.register(order_to_ve_canceled);
+        boolean registered = board.hasRegistered(order);
+        boolean registered1 = board.hasRegistered(order_to_ve_canceled);
+        Assert.assertTrue(registered);
+        Assert.assertTrue(registered1);
+        board.cancel(order_to_ve_canceled);
+        boolean registered_0 = board.hasRegistered(order);
+        boolean canceled_order = board.hasRegistered(order_to_ve_canceled);
+        Assert.assertTrue(registered_0);
+        Assert.assertFalse(canceled_order);
     }
 
 }
