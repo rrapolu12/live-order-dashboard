@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ramrapolu.orders.Order;
+import org.ramrapolu.orders.SellOrder;
 
 import static org.junit.Assert.*;
 
@@ -30,7 +31,7 @@ public class LiveOrderDashBoardTest {
 
     @Test
     public void test_register_order_on_dashboard(){
-        Order order = new Order(USERNAME,quantity,price);
+        Order order = new SellOrder(USERNAME,quantity,price);
         board.register(order);
         boolean registered = board.hasRegistered(order);
         Assert.assertTrue(registered);
@@ -38,8 +39,8 @@ public class LiveOrderDashBoardTest {
 
     @Test
     public void test_cancel_order(){
-        Order order = new Order(USERNAME,quantity,price);
-        Order order_to_ve_canceled = new Order(USERNAME_1,quantity,price);
+        Order order = new SellOrder(USERNAME,quantity,price);
+        Order order_to_ve_canceled = new SellOrder(USERNAME_1,quantity,price);
         board.register(order);
         board.register(order_to_ve_canceled);
         boolean registered = board.hasRegistered(order);

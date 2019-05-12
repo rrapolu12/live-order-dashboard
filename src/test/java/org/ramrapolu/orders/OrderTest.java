@@ -16,7 +16,7 @@ public class OrderTest {
 
     @Before
     public void before(){
-        order = new Order(USERNAME,quantity,price);
+        order = new SellOrder(USERNAME,quantity,price);
     }
 
     @Test

@@ -1,6 +1,6 @@
 package org.ramrapolu.orders;
 
-public class Order {
+public abstract class Order {
 
     private String userId;
     private double quantity;
