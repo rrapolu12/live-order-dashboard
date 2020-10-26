@@ -37,6 +37,11 @@ public class OrderSummaryTest {
     }
 
     @Test
+    public void test_hello_world_01(){
+      Assert.assertTrue(true);
+    }
+
+    @Test
     public void test_buyorder_summary_with_lowest_price_at_the_top() {
         Order buyOrderUser1 = new BuyOrder(USERNAME_1, 3.5, 306);
         Order buyOrderUser2 = new BuyOrder(USERNAME_1, 1.2, 310);
