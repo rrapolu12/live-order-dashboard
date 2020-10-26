@@ -38,7 +38,7 @@ public class OrderSummaryTest {
 
     @Test
     public void test_hello_world_01(){
-      Assert.assertTrue(true);
+      assertEquals(0,0);
     }
 
     @Test
