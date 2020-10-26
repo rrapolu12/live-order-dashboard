@@ -48,6 +48,10 @@ public class LiveOrderDashBoardTest {
     }
 
     @Test
+    public void test_hello_world(){
+    	Assert.assertTrue(true);
+    }
+    @Test
     public void test_register_order_on_dashboard(){
         boolean registered = orderDashBoard.hasRegistered(sellOrderUser1);
         Assert.assertTrue(registered);
